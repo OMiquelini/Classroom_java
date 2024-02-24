@@ -1,7 +1,7 @@
 package Dao;
 import DaoImpl.AlunoDaoJDBC;
 import DaoImpl.CursoDaoJDBC;
-import DaoImpl.DisciplinaDaoJDBC;
+import DaoImpl.MateriaDaoJDBC;
 import db.DB;
 
 public class FabricaDao {
@@ -9,19 +9,10 @@ public class FabricaDao {
         return new AlunoDaoJDBC(DB.getConnection());
     }
     public static CursoDao createCursoDao() {
-        return new CursoDaoJDBC();
+        return new CursoDaoJDBC(DB.getConnection());
     }
-    public static DisciplinaDao createDisciplinaDao() {
-        return new DisciplinaDaoJDBC();
-    }
-    public static MateriaDao createMatriculaDao() {
-        return new MatriculaDaoJDBC();
-    }
-    public static ProfessorDao createProfessorDao() {
-        return new ProfessorDaoJDBC();
-    }
-    public static TurmaDao createTurmaDao() {
-        return new TurmaDaoJDBC();
+    public static MateriaDao createMateriaDao() {
+        return new MateriaDaoJDBC(DB.getConnection());
     }
     
 }

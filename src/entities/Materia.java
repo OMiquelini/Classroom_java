@@ -3,7 +3,7 @@ package entities;
 public class Materia {
     private String name;
     private int materiaId;
-    private Curso cursoId;
+    private int cursoId;
 
     public Materia() {
     }
@@ -11,7 +11,7 @@ public class Materia {
     public Materia(String name, int materiaId, Curso cursoId) {
         this.name = name;
         this.materiaId = materiaId;
-        this.cursoId = cursoId;
+        this.cursoId = cursoId.getCursoId();
     }
     public String getName() {
         return name;
@@ -27,9 +27,9 @@ public class Materia {
         this.materiaId = materiaId;
     }
     public int getCursoId() {
-        return cursoId.getCursoId();
+        return this.cursoId;
     }
-    public void setCursoId(Curso cursoId) {
+    public void setCursoId(int cursoId) {
         this.cursoId = cursoId;
     }
     public int hashCode()
@@ -38,7 +38,7 @@ public class Materia {
         int result = 1;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + materiaId;
-        result = prime * result + cursoId.getCursoId();
+        result = prime * result + cursoId;
         return result;
     }
     public boolean equals(Object obj)
